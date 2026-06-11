@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Γ 的个人网站</title>
+    <meta name="description" content="Γ 的个人网站，主要记录关于数学的个人见解。">
+    
+    <!-- Unique ID for testing -->
+    <meta id="site-metadata" data-app-name="gamma-personal-website">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>Γ</text></svg>">
+
+    <!-- Google Fonts: Inter for Body, Outfit for headings, Fira Code for code -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- FontAwesome Icons (Fast stable CDN) -->
+    <link rel="stylesheet" href="https://cdn.bootcdn.net/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- KaTeX CSS for LaTeX Math Typesetting (Local offline-capable) -->
+    <link rel="stylesheet" href="lib/katex/katex.min.css">
+
+    <!-- Custom CSS Stylesheet (includes custom syntax highlighting) -->
+    <link rel="stylesheet" href="index.css">
+</head>
+<body class="dark-mode"> <!-- Default to Dark Mode for premium look -->
+    <!-- Ambient Background blobs for glassmorphism layout -->
+    <div class="ambient-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <!-- Header / Navigation -->
+    <header class="navbar" id="site-header">
+        <div class="nav-container">
+            <a href="#/" class="logo">
+                <span class="logo-symbol">Γ</span>
+                <span class="logo-text">Γ 的个人网站</span>
+            </a>
+            <nav class="nav-menu" id="nav-menu">
+                <a href="#/" class="nav-link active" data-route=""><i class="fa-solid fa-house"></i> 首页</a>
+                <a href="#/articles" class="nav-link" data-route="articles"><i class="fa-solid fa-book-open"></i> 内容列表</a>
+                <a href="#/moments" class="nav-link" data-route="moments"><i class="fa-solid fa-hashtag"></i> 动态</a>
+                <a href="#/about" class="nav-link" data-route="about"><i class="fa-solid fa-user"></i> 关于作者</a>
+            </nav>
+            <div class="nav-actions">
+                <button id="theme-toggle" class="theme-toggle-btn" aria-label="切换主题">
+                    <i class="fa-solid fa-sun icon-light"></i>
+                    <i class="fa-solid fa-moon icon-dark"></i>
+                </button>
+                <button id="mobile-menu-toggle" class="mobile-menu-btn" aria-label="移动端菜单">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <main class="main-content" id="app">
+        <!-- Rendered SPA pages go here -->
+        <div class="page-loader">
+            <div class="spinner"></div>
+            <p>加载中，感受数学的奥秘...</p>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+        <div class="footer-container">
+            <p>&copy; 2026 Γ 的个人网站. 保留所有权利。</p>
+            <p class="footer-tech">Powered by HTML5, CSS3, JS & KaTeX. Built with passion.</p>
+        </div>
+    </footer>
+
+    <!-- JS Libraries from CDN -->
+    <!-- Local JS Libraries (Offline-capable & fast loading) -->
+    <!-- Marked.js (Markdown parser) -->
+    <script src="lib/marked/marked.min.js"></script>
+
+    <!-- KaTeX library -->
+    <script defer src="lib/katex/katex.min.js"></script>
+
+    <!-- Highlight.js library -->
+    <script src="lib/highlight/highlight.min.js"></script>
+
+    <!-- App Scripts -->
+    <script src="comments.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>

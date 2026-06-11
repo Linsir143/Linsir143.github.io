@@ -1,0 +1,267 @@
+[
+  {
+    "id": "post_21",
+    "title": "一个14元不等式",
+    "date": "2026-05-01",
+    "category": "题目",
+    "subcategory": "2026.5",
+    "tags": [
+      "不等式"
+    ],
+    "summary": "证明： $ LHS-RHS =",
+    "filePath": "posts/题目/2026.5/一个14元不等式.md"
+  },
+  {
+    "id": "post_16",
+    "title": "blow up",
+    "date": "2026-03-18",
+    "category": "题目",
+    "subcategory": "2026.3",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "2026.3.18 深层次的东西/原理等可能涉及代数几何，这只是一些简单的应用层面的东西 Conjecture",
+    "filePath": "posts/题目/2026.3/blow up.md"
+  },
+  {
+    "id": "post_15",
+    "title": "(x^y+y^x)(1x+1y)-4",
+    "date": "2026-03-01",
+    "category": "题目",
+    "subcategory": "2026.3",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "这是原题和n元推广的证明. 1. 原题 由柯西不等式",
+    "filePath": "posts/题目/2026.3/(x^y+y^x)(1x+1y)-4.md"
+  },
+  {
+    "id": "post_17",
+    "title": "三元高次实数对称大练习v0.1",
+    "date": "2026-03-01",
+    "category": "题目",
+    "subcategory": "2026.3",
+    "tags": [
+      "实数不等式",
+      "高次实数",
+      "对称配方",
+      "三元不等式"
+    ],
+    "summary": "乘 \\begin{aligned}",
+    "filePath": "posts/题目/2026.3/三元高次实数对称大练习v0.1.md"
+  },
+  {
+    "id": "post_18",
+    "title": "植树节做数学n元推广",
+    "date": "2026-03-01",
+    "category": "题目",
+    "subcategory": "2026.3",
+    "tags": [
+      "n元推广"
+    ],
+    "summary": "4L 可能有n元. 五元",
+    "filePath": "posts/题目/2026.3/植树节做数学n元推广.md"
+  },
+  {
+    "id": "post_19",
+    "title": "理论上应当不太紧，只可惜次数过高…………",
+    "date": "2026-03-01",
+    "category": "题目",
+    "subcategory": "2026.3",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "原题 原题的规模是可接受的，不会爆炸. <details>",
+    "filePath": "posts/题目/2026.3/理论上应当不太紧，只可惜次数过高………….md"
+  },
+  {
+    "id": "post_20",
+    "title": "除夕賀歲",
+    "date": "2026-03-01",
+    "category": "题目",
+    "subcategory": "2026.3",
+    "tags": [
+      "数学"
+    ],
+    "summary": "20c - d^264ab^2c - 80b^3c - 64abc^2 + 80bc^3 + 64ab^2d - 80b^3d + 79a^2cd + 14abcd + 63b^2cd - 64ac^2d + 16bc^2d + c^...",
+    "filePath": "posts/题目/2026.3/除夕賀歲.md"
+  },
+  {
+    "id": "post_1",
+    "title": "Mathematica在代数不等式配方中的应用",
+    "date": "2026-01-01",
+    "category": "mathematica",
+    "subcategory": "",
+    "tags": [
+      "不等式"
+    ],
+    "summary": "Mathematica 在代数不等式配方中的应用 Mathematica 是进行符号代数计算的强大工具。在实对称不等式的研究中，我们经常需要寻找齐次多项式的代数平方和（SOS）分解。 1. 概念与原理",
+    "filePath": "posts/mathematica/Mathematica在代数不等式配方中的应用.md"
+  },
+  {
+    "id": "post_12",
+    "title": "一个n元推广",
+    "date": "2025-09-02",
+    "category": "题目",
+    "subcategory": "2025.9",
+    "tags": [
+      "n元推广"
+    ],
+    "summary": "2025.9.2 若非负实数 满足 ，则",
+    "filePath": "posts/题目/2025.9/一个n元推广.md"
+  },
+  {
+    "id": "post_13",
+    "title": "一千零一夜",
+    "date": "2025-09-01",
+    "category": "题目",
+    "subcategory": "2025.9",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "一千零一夜 对非负实数，以下一千零一次不等式成立",
+    "filePath": "posts/题目/2025.9/一千零一夜.md"
+  },
+  {
+    "id": "post_14",
+    "title": "不等式吧 5060",
+    "date": "2025-09-01",
+    "category": "题目",
+    "subcategory": "2025.9",
+    "tags": [
+      "不等式"
+    ],
+    "summary": "> 对实数a、b、c，当a＋b＋c＞0时，有：sbca^2-bc≤3sab-1c-1． > 齐次化 1 = v 变成关于 v 三次的，转化成证明判别式是负的，",
+    "filePath": "posts/题目/2025.9/不等式吧 5060.md"
+  },
+  {
+    "id": "post_11",
+    "title": "完全(轮换)对称配方",
+    "date": "2025-08-14",
+    "category": "题目",
+    "subcategory": "2025.8",
+    "tags": [
+      "对称配方"
+    ],
+    "summary": "2025.8.14 完全轮换对称配方 🈶🈚️美观配方？【不等式吧】百度贴吧https://tieba.baidu.com/p/9954297859",
+    "filePath": "posts/题目/2025.8/完全(轮换)对称配方.md"
+  },
+  {
+    "id": "post_7",
+    "title": "一个四元旧题",
+    "date": "2025-08-13",
+    "category": "题目",
+    "subcategory": "2025.8",
+    "tags": [
+      "四元不等式"
+    ],
+    "summary": "2025.8.13 对这个题目是有印象的： 原来是这样来自知乎",
+    "filePath": "posts/题目/2025.8/一个四元旧题.md"
+  },
+  {
+    "id": "post_8",
+    "title": "两个四元趣题",
+    "date": "2025-08-01",
+    "category": "题目",
+    "subcategory": "2025.8",
+    "tags": [
+      "四元不等式"
+    ],
+    "summary": "两个四元趣题 1. 正数 a,b,c,d 满足 abcd=1，求证：",
+    "filePath": "posts/题目/2025.8/两个四元趣题.md"
+  },
+  {
+    "id": "post_9",
+    "title": "五元,七元实数",
+    "date": "2025-08-01",
+    "category": "题目",
+    "subcategory": "2025.8",
+    "tags": [
+      "实数不等式",
+      "多元不等式"
+    ],
+    "summary": "纳入 https://www.zhihu.com/question/458618310/answer/1880636264 的更新 对实数，有",
+    "filePath": "posts/题目/2025.8/五元,七元实数.md"
+  },
+  {
+    "id": "post_10",
+    "title": "含参三元.四次代数数.实数",
+    "date": "2025-08-01",
+    "category": "题目",
+    "subcategory": "2025.8",
+    "tags": [
+      "实数不等式",
+      "三元不等式"
+    ],
+    "summary": "23-ll^23+l^2a-b^2a-c^2+1-l3+lb+c-a^2-bc^2b-c^2≥bcl^23-l^2b+c-2a^2b-c^2-21+lab+c-2a+2-l1-lb-c^2^2 其中 -1.37711209391067...",
+    "filePath": "posts/题目/2025.8/含参三元.四次代数数.实数.md"
+  },
+  {
+    "id": "post_3",
+    "title": "一个与广义 Rayleigh Quotient 关联的不等式$n$元推广",
+    "date": "2025-07-29",
+    "category": "题目",
+    "subcategory": "2025.7",
+    "tags": [
+      "不等式",
+      "n元推广"
+    ],
+    "summary": "2025.7.29 一个不等式元推广 设 ，猜有",
+    "filePath": "posts/题目/2025.7/一个与广义 Rayleigh Quotient 关联的不等式$n$元推广.md"
+  },
+  {
+    "id": "post_4",
+    "title": "单基配方",
+    "date": "2025-07-18",
+    "category": "题目",
+    "subcategory": "2025.7",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "单基配方 2025.7.18 考虑 ，证明",
+    "filePath": "posts/题目/2025.7/单基配方.md"
+  },
+  {
+    "id": "post_2",
+    "title": "一个不等式 $n$ 元形式",
+    "date": "2025-07-01",
+    "category": "题目",
+    "subcategory": "2025.7",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "一个不等式 元形式 设变元取正数. 已经知道",
+    "filePath": "posts/题目/2025.7/frac{a^2}{b}+frac{b^2}{c}+frac{c^2}{a}ge sqrt{3left( a^2+b^2+c^2 right)} 元形式.md"
+  },
+  {
+    "id": "post_5",
+    "title": "去根号方法",
+    "date": "2025-07-01",
+    "category": "题目",
+    "subcategory": "2025.7",
+    "tags": [
+      "代数不等式",
+      "数学"
+    ],
+    "summary": "去根号方法 考虑 ，证明",
+    "filePath": "posts/题目/2025.7/去根号方法.md"
+  },
+  {
+    "id": "post_6",
+    "title": "约束，三元非齐次",
+    "date": "2025-07-01",
+    "category": "题目",
+    "subcategory": "2025.7",
+    "tags": [
+      "三元不等式"
+    ],
+    "summary": "考虑下面的集合set， set={1418425344+1421628480 x+154319520 x^2+58156208 x^3+3435392392 x^4+2350340120 x^5+3169325340 x^6+7165...",
+    "filePath": "posts/题目/2025.7/约束，三元非齐次.md"
+  }
+]
