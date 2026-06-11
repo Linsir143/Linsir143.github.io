@@ -2,11 +2,11 @@
 
 // Giscus configuration. Set enabled: true and fill in your details once deployed to GitHub!
 const GISCUS_CONFIG = {
-    enabled: false, // Set to true to activate Giscus once deployed
-    repo: "your-github-username/your-repo-name",
-    repoId: "R_xxxxxxxx",
+    enabled: true, 
+    repo: "Linsir143/Linsir143.github.io",
+    repoId: "R_kgDOS3zhQQ",
     category: "Announcements",
-    categoryId: "DIC_xxxxxxxx",
+    categoryId: "DIC_kwDOS3zhQc4C-93W",
     mapping: "pathname",
     strict: "0",
     reactionsEnabled: "1",
