@@ -638,7 +638,7 @@ function renderAbout() {
             <div class="about-profile">
                 <div class="profile-avatar">Γ</div>
                 <h3 class="profile-name">Γ</h3>
-                <p class="profile-title">数学爱好者 / 不等式研究者</p>
+                <p class="profile-title">一个人</p>
                 <div class="profile-socials">
                     <a href="https://github.com" target="_blank" class="social-link" title="GitHub"><i class="fa-brands fa-github"></i></a>
                     <a href="mailto:contact@example.com" class="social-link" title="邮箱"><i class="fa-solid fa-envelope"></i></a>
