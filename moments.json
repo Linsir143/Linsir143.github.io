@@ -1,8 +1,10 @@
 [
   {
-    "id": "moment_1",
-    "date": "2026-06-11 15:30",
-    "text": "111。",
-    "images": ["posts/images/AgAABVPZS7juIvaIlx1NuocPeqPX0TC7.png"]
-  } 
+    "id": "moment_local_1781259362739",
+    "date": "2026-06-12 18:16",
+    "text": "测试。$x+y+z $, \n$$\n x^3 -x-1\n $$",
+    "images": [
+      "posts/images/AgAABVPZS7g_KHyc3mBE9K1fsM_YIEa4.png"
+    ]
+  }
 ]

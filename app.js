@@ -109,74 +109,7 @@ function parseMarkdownWithMath(markdownText) {
 // Helpers
 // Post-process code blocks for syntax highlighting and copy buttons
 function postProcessCodeBlocks() {
-    // 1. Highlight all code blocks inside <pre><code> if hljs is available
-    if (typeof hljs !== 'undefined') {
-        // Register custom math/Wolfram language highlighter if not exists
-        if (!hljs.getLanguage('math')) {
-            hljs.registerLanguage('math', function(hljs) {
-                return {
-                    name: 'Math',
-                    aliases: ['mathematica', 'wl', 'mma', 'math'],
-                    contains: [
-                        {
-                            className: 'comment',
-                            begin: '\\(\\*',
-                            end: '\\*\\)'
-                        },
-                        {
-                            className: 'number',
-                            begin: '\\b\\d+(\\.\\d+)?\\b',
-                            relevance: 0
-                        },
-                        {
-                            className: 'keyword',
-                            begin: '\\b(Sin|Cos|Tan|Log|Exp|Sqrt|Plot|Sum|Product|Integrate|Limit|D|Solve|Reduce|Simplify|FullSimplify|Expand|Factor)\\b',
-                            relevance: 5
-                        },
-                        {
-                            className: 'variable',
-                            begin: '\\b[a-zA-Z]\\b',
-                            relevance: 0
-                        },
-                        {
-                            className: 'operator',
-                            begin: '[+\\-*/^=<>!&|]',
-                            relevance: 0
-                        },
-                        {
-                            className: 'punctuation',
-                            begin: '[(){}\\[\\]]',
-                            relevance: 0
-                        }
-                    ]
-                };
-            });
-        }
-
-        document.querySelectorAll('pre code').forEach((block) => {
-            if (!block.dataset.highlighted) {
-                // If a code block has no specific language class, or is plaintext, default to 'math'
-                let hasLanguage = false;
-                block.classList.forEach((cls) => {
-                    if (cls.startsWith('language-') && cls !== 'language-plaintext') {
-                        hasLanguage = true;
-                    }
-                });
-
-                if (!hasLanguage) {
-                    block.classList.remove('language-plaintext');
-                    block.classList.add('language-math');
-                }
-
-                hljs.highlightElement(block);
-                block.dataset.highlighted = 'true';
-            }
-        });
-    } else {
-        console.warn("Highlight.js (hljs) is not loaded; skipping syntax highlighting.");
-    }
-
-    // 2. Add copy buttons to all <pre> elements (independent of hljs!)
+    // Add copy buttons to all <pre> elements
     document.querySelectorAll('pre').forEach((pre) => {
         if (pre.querySelector('.code-copy-btn')) return;
 
