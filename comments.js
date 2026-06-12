@@ -112,6 +112,7 @@ function renderLocalComments(container, postId) {
             return;
         }
 
+        const isAdmin = localStorage.getItem("gamma_admin") === "true";
         listContainer.innerHTML = comments.map((c, index) => `
             <div class="comment-card" style="position: relative; display: flex; gap: 1rem; margin-bottom: 1rem; align-items: flex-start;">
                 <div class="comment-avatar">${LocalComments.getAvatarLetter(c.author)}</div>
@@ -121,27 +122,31 @@ function renderLocalComments(container, postId) {
                             <span class="comment-author" style="font-weight: 600; font-size: 0.95rem; color: var(--text-color);">${escapeHtml(c.author)}</span>
                             <span class="comment-date" style="font-size: 0.8rem; color: var(--text-muted); margin-left: 0.5rem;">${LocalComments.formatDate(c.date)}</span>
                         </div>
+                        ${isAdmin ? `
                         <button class="comment-delete-btn" data-index="${index}" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.85rem; display: inline-flex; align-items: center; gap: 0.3rem;" title="删除评论">
                             <i class="fa-solid fa-trash"></i> 删除
                         </button>
+                        ` : ''}
                     </div>
                     <div class="comment-body" style="margin-top: 0.4rem; font-size: 0.95rem; line-height: 1.5; color: var(--text-color);">${escapeHtml(c.text).replace(/\n/g, '<br>')}</div>
                 </div>
             </div>
         `).join("");
 
-        listContainer.querySelectorAll(".comment-delete-btn").forEach(btn => {
-            btn.addEventListener("click", () => {
-                const index = parseInt(btn.getAttribute("data-index"));
-                if (confirm("确认删除这条评论吗？")) {
-                    LocalComments.deleteComment(postId, index);
-                    updateList();
-                    if (typeof window.updateMomentsPageCommentsCount === "function") {
-                        window.updateMomentsPageCommentsCount(postId);
+        if (isAdmin) {
+            listContainer.querySelectorAll(".comment-delete-btn").forEach(btn => {
+                btn.addEventListener("click", () => {
+                    const index = parseInt(btn.getAttribute("data-index"));
+                    if (confirm("确认删除这条评论吗？")) {
+                        LocalComments.deleteComment(postId, index);
+                        updateList();
+                        if (typeof window.updateMomentsPageCommentsCount === "function") {
+                            window.updateMomentsPageCommentsCount(postId);
+                        }
                     }
-                }
+                });
             });
-        });
+        }
     };
 
     updateList();

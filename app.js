@@ -649,21 +649,12 @@ function renderAbout() {
             <div class="about-bio">
                 <h2>关于作者</h2>
                 <p>
-                    你好！我是 Γ。我是一名狂热的数学爱好者，平时热衷于研究各类代数不等式与高等几何命题。
-                </p>
-                <p>
-                    这个小站是我用来整理与记录数学题目的个人角落。这里的文章主要围绕着不等式定理（如 Cauchy-Schwarz 不等式、AM-GM 不等式、Holder 不等式）的推广、具有精妙配方技巧的对称实数不等式以及各种 n 元代数问题。
-                </p>
-                <p>
-                    所有的内容都是主要以 Markdown 语法撰写，并经过了定制化数学解析器的处理，使得复杂的多行公式和行内数学表达式都可以通过 KaTeX 以接近 LaTeX 排版水准的高画质在浏览器中瞬间呈献。
-                </p>
+                    你好！我是 Γ。
+                </p> 
                 
-                <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin: 2rem 0 1rem;">主要研究兴趣</h3>
+                <h3 style="font-family: var(--font-heading); font-size: 1.4rem; margin: 2rem 0 1rem;">测试</h3>
                 <div class="interest-list">
-                    <div class="interest-item"><i class="fa-solid fa-square-root-variable"></i> 实数代数不等式</div>
-                    <div class="interest-item"><i class="fa-solid fa-infinity"></i> 对称/轮换式配方</div>
-                    <div class="interest-item"><i class="fa-solid fa-calculator"></i> n 元代数推广</div>
-                    <div class="interest-item"><i class="fa-solid fa-bezier-curve"></i> 约束极值问题</div>
+                    <div class="interest-item"><i class="fa-solid fa-square-root-variable"></i>111</div>
                 </div>
             </div>
         </div>
@@ -681,25 +672,37 @@ async function renderMoments() {
     `;
 
     const moments = await loadMoments();
+    const isAdmin = localStorage.getItem("gamma_admin") === "true";
+
+    const publisherCardHtml = isAdmin ? `
+        <!-- Publisher Editor (Admin Only) -->
+        <div class="moment-publisher-card">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+                <div style="font-weight: 700; font-size: 1.1rem; color: var(--text-color);">
+                    <i class="fa-solid fa-pen-nib"></i> 发布新动态 <span style="font-size: 0.8rem; font-weight: normal; color: var(--primary-color); background: rgba(99, 102, 241, 0.1); padding: 2px 6px; border-radius: 4px; margin-left: 0.5rem;">管理员模式</span>
+                </div>
+                <button id="admin-logout-btn" class="btn btn-secondary" style="padding: 0.3rem 0.8rem; font-size: 0.85rem;"><i class="fa-solid fa-right-from-bracket"></i> 退出登录</button>
+            </div>
+            <textarea id="moment-text-input" class="moment-textarea" placeholder="写下你的想法... (支持 LaTeX 公式，例如 $x^2 + y^2 \\ge 2xy$)" required></textarea>
+            <div class="moment-publisher-actions" style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                <input type="text" id="moment-image-input" class="moment-image-input" placeholder="添加图片路径 (可选，如 posts/images/xxx.png)" style="flex-grow: 1; max-width: 300px;">
+                <div style="display: flex; gap: 0.8rem; flex-wrap: wrap;">
+                    <button id="export-moments-btn" class="btn btn-secondary" style="padding: 0.5rem 1.2rem;" title="导出合并后的 moments.json"><i class="fa-solid fa-download"></i> 导出 JSON</button>
+                    <button id="reset-moments-cache-btn" class="btn btn-secondary" style="padding: 0.5rem 1.2rem; background-color: rgba(239, 68, 68, 0.1); color: #ef4444; border-color: rgba(239, 68, 68, 0.2);" title="在您将导出的 moments.json 部署到 GitHub 后，点击此按钮可以清理本地浏览器缓存"><i class="fa-solid fa-arrows-rotate"></i> 重置本地缓存</button>
+                    <button id="submit-moment-btn" class="btn btn-primary" style="padding: 0.5rem 1.2rem;"><i class="fa-solid fa-paper-plane"></i> 发布</button>
+                </div>
+            </div>
+        </div>
+    ` : '';
 
     app.innerHTML = `
         <div class="moments-container">
             <h2 class="section-title" style="margin-bottom: 1rem;"><i class="fa-solid fa-hashtag"></i> 动态</h2>
             <p style="color: var(--text-muted); margin-bottom: 2rem; font-size: 0.95rem;">
-                记录一些数学之外的瞬间、简短的想法或解题实况。
+                记录一些想法。
             </p>
 
-            <!-- Publisher Editor -->
-            <div class="moment-publisher-card">
-                <div style="font-weight: 700; font-size: 1.1rem; margin-bottom: 1rem; color: var(--text-color);">
-                    <i class="fa-solid fa-pen-nib"></i> 发布新动态
-                </div>
-                <textarea id="moment-text-input" class="moment-textarea" placeholder="写下你的想法... (支持 LaTeX 公式，例如 $x^2 + y^2 \\ge 2xy$)" required></textarea>
-                <div class="moment-publisher-actions" style="margin-top: 1rem; display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
-                    <input type="text" id="moment-image-input" class="moment-image-input" placeholder="添加图片路径 (可选，如 posts/images/xxx.png)">
-                    <button id="submit-moment-btn" class="btn btn-primary" style="padding: 0.5rem 1.2rem;"><i class="fa-solid fa-paper-plane"></i> 发布</button>
-                </div>
-            </div>
+            ${publisherCardHtml}
 
             <!-- Moments List Feed -->
             <div class="moments-feed" id="moments-feed-list">
@@ -728,6 +731,11 @@ async function renderMoments() {
 
     // Global helper for deleting moment
     window.deleteMomentById = function(momentId) {
+        const adminStatus = localStorage.getItem("gamma_admin") === "true";
+        if (!adminStatus) {
+            alert("无权操作！");
+            return;
+        }
         if (confirm("确认删除这条动态吗？")) {
             if (momentId.startsWith("moment_local_")) {
                 const saved = localStorage.getItem("gamma_moments");
@@ -911,9 +919,11 @@ async function renderMoments() {
                             <button class="btn-toggle-comments" data-moment-id="${m.id}" onclick="window.toggleComments('${m.id}')" style="background: none; border: none; color: var(--primary-color); cursor: pointer; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.4rem;">
                                 ${buttonText}
                             </button>
+                            ${isAdmin ? `
                             <button class="btn-delete-moment" onclick="window.deleteMomentById('${m.id}')" style="background: none; border: none; color: #ef4444; cursor: pointer; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 0.3rem;" title="删除此条动态">
                                 <i class="fa-solid fa-trash"></i> 删除
                             </button>
+                            ` : ''}
                         </div>
                         ${previewHtml}
                         <div class="moment-comments-wrapper" id="comments-wrapper-${m.id}" style="display: none; margin-top: 1rem; background-color: rgba(99, 102, 241, 0.02); border-radius: 8px; padding: 1rem; border: 1px solid var(--border-color);">
@@ -937,26 +947,73 @@ async function renderMoments() {
 
     renderFeed();
 
-    // Publish handler
-    const submitBtn = document.getElementById("submit-moment-btn");
-    submitBtn.addEventListener("click", () => {
-        const textInput = document.getElementById("moment-text-input");
-        const imageInput = document.getElementById("moment-image-input");
-        const text = textInput.value.trim();
-        const image = imageInput.value.trim();
+    if (isAdmin) {
+        // Publish handler
+        const submitBtn = document.getElementById("submit-moment-btn");
+        if (submitBtn) {
+            submitBtn.addEventListener("click", () => {
+                const textInput = document.getElementById("moment-text-input");
+                const imageInput = document.getElementById("moment-image-input");
+                const text = textInput.value.trim();
+                const image = imageInput.value.trim();
 
-        if (text) {
-            const imagesArray = image ? [image] : [];
-            saveMoment(text, imagesArray);
-            
-            // Clear inputs
-            textInput.value = "";
-            imageInput.value = "";
-            
-            // Refresh feed
-            renderFeed();
+                if (text) {
+                    const imagesArray = image ? [image] : [];
+                    saveMoment(text, imagesArray);
+                    
+                    // Clear inputs
+                    textInput.value = "";
+                    imageInput.value = "";
+                    
+                    // Refresh feed
+                    renderFeed();
+                }
+            });
         }
-    });
+
+        // Logout handler
+        const logoutBtn = document.getElementById("admin-logout-btn");
+        if (logoutBtn) {
+            logoutBtn.addEventListener("click", () => {
+                localStorage.removeItem("gamma_admin");
+                alert("已退出管理员模式。");
+                location.reload();
+            });
+        }
+
+        // Export handler
+        const exportBtn = document.getElementById("export-moments-btn");
+        if (exportBtn) {
+            exportBtn.addEventListener("click", async () => {
+                const allMoments = await loadMoments();
+                const exportData = JSON.stringify(allMoments, null, 2);
+                
+                const blob = new Blob([exportData], { type: "application/json" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = "moments.json";
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+        }
+
+        // Reset cache handler
+        const resetBtn = document.getElementById("reset-moments-cache-btn");
+        if (resetBtn) {
+            resetBtn.addEventListener("click", () => {
+                if (confirm("在重置本地缓存前，请确认您已将导出的 moments.json 部署到 GitHub。\n这会清除本地浏览器的缓存数据，重新从服务器加载 moments.json。\n\n确认重置吗？")) {
+                    localStorage.removeItem("gamma_moments");
+                    localStorage.removeItem("gamma_deleted_moments");
+                    localMoments = [];
+                    alert("本地缓存已清除，正在重新加载页面...");
+                    location.reload();
+                }
+            });
+        }
+    }
 }
 
 // Load moments cache
@@ -1051,10 +1108,43 @@ function initMobileMenu() {
     }
 }
 
+// Hidden Admin login trigger (5 clicks on logo within 3 seconds)
+function initAdminTrigger() {
+    const logoEl = document.querySelector(".logo");
+    if (!logoEl) return;
+
+    let clicks = 0;
+    let timer = null;
+
+    logoEl.addEventListener("click", (e) => {
+        clicks++;
+        if (timer) clearTimeout(timer);
+        
+        timer = setTimeout(() => {
+            clicks = 0;
+        }, 3000);
+
+        if (clicks >= 5) {
+            clicks = 0;
+            clearTimeout(timer);
+            
+            const password = prompt("请输入管理员密码：");
+            if (password === "linsir143") {
+                localStorage.setItem("gamma_admin", "true");
+                alert("登录成功，已开启管理员模式！");
+                location.reload();
+            } else if (password !== null) {
+                alert("密码错误！");
+            }
+        }
+    });
+}
+
 // Bootstrapping App
 window.addEventListener("DOMContentLoaded", () => {
     initTheme();
     initMobileMenu();
+    initAdminTrigger();
     handleRouting();
 });
 
